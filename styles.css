@@ -66,17 +66,14 @@ main {
     flex: 0 0 65%;
     margin: 10px;
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
+    height: 100%; /* Use full height */
+    max-height: 90%; /* Maximum height */
 }
 
 .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover; /* Cover to fill the wrapper */
 }
 
 .chat-wrapper {
@@ -130,6 +127,5 @@ main {
     .video-wrapper, .chat-wrapper {
         flex: 1;
         width: 100%;
-        max-height: none; /* Remove max-height restriction */
     }
 }
