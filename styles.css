@@ -56,8 +56,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch; /* Stretch to fill height */
-    flex-wrap: nowrap;
+    align-items: stretch;
     width: 100%;
     height: calc(100vh - 85px);
 }
@@ -66,14 +65,15 @@ main {
     flex: 0 0 65%;
     margin: 10px;
     position: relative;
-    height: 100%; /* Use full height */
-    max-height: 90%; /* Maximum height */
+    height: 100%;
+    max-height: 90%;
 }
 
-.video-wrapper video {
+.video-wrapper iframe {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* Change to fill */
+    border: none;
+    border-radius: 5px;
 }
 
 .chat-wrapper {
@@ -82,7 +82,7 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-height: 90%; /* Maximum height */
+    max-height: 90%;
 }
 
 #chat-box {
@@ -118,7 +118,7 @@ main {
     background-color: #333;
 }
 
-@media (max-width: 100%) {
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
         height: auto;
