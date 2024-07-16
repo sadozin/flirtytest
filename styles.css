@@ -68,7 +68,6 @@ main {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
-    max-height: 90%; /* Maximum height */
     overflow: hidden;
 }
 
