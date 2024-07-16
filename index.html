@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website</title>
+    <title>Video Embed</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Place your CSS here */
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="container">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="chat-wrapper">
-                <div id="chat-box"></div>
-                <input type="text" id="chat-input" placeholder="Type your message...">
-                <button id="send-button">Send</button>
-            </div>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <div class="video-wrapper">
+            <!-- YouTube Embed -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+
+            <!-- Alternatively, for Twitch -->
+            <!-- <iframe src="https://player.twitch.tv/?channel=CHANNEL_NAME&parent=YOUR_DOMAIN" allowfullscreen></iframe> -->
         </div>
-    </main>
+        <div class="chat-wrapper">
+            <div id="chat-box"></div>
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+</main>
 
-    <script src="script.js"></script>
 </body>
 </html>
