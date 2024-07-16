@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     background-color: #000;
     color: white;
@@ -14,12 +14,11 @@ body {
 header {
     width: 100%;
     background-color: #111;
-    padding: 0;
-    height: 65px; /* Set header height to 65px */
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Fix header at the top */
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
@@ -46,7 +45,11 @@ main {
     width: 100%;
     max-width: 1200px;
     padding: 20px;
-    margin-top: 65px; /* Add margin to prevent content from being hidden behind the header */
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -54,15 +57,17 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: nowrap; /* Ensure no wrapping of the elements */
+    flex-wrap: nowrap;
+    width: 100%;
+    height: calc(100vh - 85px); /* Full height minus header and padding */
 }
 
 .video-wrapper {
-    flex: 0 0 65%; /* Set the video section to 65% of the container width */
+    flex: 0 0 65%;
     margin: 10px;
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
+    height: 100%;
 }
 
 .video-wrapper iframe {
@@ -74,10 +79,11 @@ main {
 }
 
 .chat-wrapper {
-    flex: 0 0 25%; /* Set the chat section to 25% of the container width */
+    flex: 0 0 25%;
     margin: 10px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 #chat-box {
@@ -116,6 +122,7 @@ main {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        height: auto;
     }
 
     .video-wrapper, .chat-wrapper {
