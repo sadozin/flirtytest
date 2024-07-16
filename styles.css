@@ -14,7 +14,11 @@ body {
 header {
     width: 100%;
     background-color: #111;
-    padding: 10px 0;
+    padding: 0;
+    height: 65px; /* Set header height to 65px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
@@ -46,18 +50,24 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensure no wrapping of the elements */
 }
 
-.video-wrapper, .chat-wrapper {
-    flex: 1;
+.video-wrapper {
+    flex: 0 0 65%; /* Set the video section to 65% of the container width */
     margin: 10px;
-    min-width: 300px; /* Ensures that the boxes don't shrink too much on small screens */
 }
 
 .chat-wrapper {
+    flex: 0 0 25%; /* Set the chat section to 25% of the container width */
+    margin: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
 }
 
 #chat-box {
@@ -66,7 +76,6 @@ main {
     padding: 10px;
     margin-bottom: 10px;
     overflow-y: auto;
-    height: 315px;
     background-color: #111;
     color: white;
 }
@@ -97,5 +106,10 @@ main {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+    }
+
+    .video-wrapper, .chat-wrapper {
+        flex: 1;
+        width: 100%;
     }
 }
